@@ -1,38 +1,483 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #04070c;
+  color: #fff;
+}
+li {
+  list-style: none;
+}
+.loading {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  font-size: 1rem;
+  color: #b1b1b1;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.alert {
+  background-color: rgba(255, 0, 0, 0.144) !important;
+  color: #ffffff96 !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.d-flex {
   display: flex;
-  flex-direction: column;
+}
+/* NAVBAR */
+nav {
+  background-color: #212121 !important;
+  z-index: 999;
+}
+.logo {
+  display: flex;
   align-items: center;
+  gap: 0.2rem;
+}
+.logo h1 {
+  font-size: 2.5rem;
+  color: rgb(255, 0, 0);
+}
+.navbar {
+  justify-content: space-between;
+}
+.navbar button a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  width: 100px;
+  padding: 10px 0 10px 0;
+}
+.navbar button:hover {
+  background-color: rgb(255, 0, 0);
+  border-radius: 0;
+}
+.nav-menu .logo {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.nav-menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  width: 100%;
+  font-weight: 400;
+}
+.MuiDrawer-paperAnchorLeft {
+  background-color: #212121 !important;
+}
+/* END OF NAVBAR */
+
+/* CARD */
+.movie-list {
+  margin: auto;
+  margin-top: 5rem;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 1px;
+  justify-content: center;
+}
+.card-body {
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+  position: relative;
+  color: #fff;
+  margin-bottom: 8rem;
+}
+.card-img img {
+  object-fit: cover;
+  width: 200px;
+  height: 400px;
+}
+.card-title h2 {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+.title-bot h4 {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #b1b1b1;
+  margin-top: 0.2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.rate {
+  width: 50%;
+  height: 20px;
+  align-items: center;
+  line-height: 20px;
+  /* position: absolute; */
+  top: 0%;
+
+  right: 0%;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  /* border-radius: 0 0 0 10px; */
+  height: 40px;
+  width: 100px;
+  /* justify-content: center; */
+}
+.rate h5 {
+  margin-left: 0.6rem;
+  font-weight: 400;
+}
+.star {
+  color: yellow;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* END OF CARD */
+
+/* DETAIL */
+.detail {
+  width: 100%;
+}
+.header {
+  position: relative;
+  height: 60vh;
+}
+.header img {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  position: absolute;
+  object-position: top center;
+}
+
+.overlay {
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0), #04070c);
+  width: 100%;
+  height: 20rem;
+  position: absolute;
+  bottom: 0%;
+}
+.title-movie-detail {
+  position: absolute;
+  bottom: 5%;
+}
+.title-movie-detail h2 {
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+.title-movie-detail p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.rate-detail {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  line-height: 20px;
+  height: 30px;
+  gap: 5px;
+  width: 100px;
+}
+.rate-detail h5 {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.body-detail h3 {
+  font-weight: 400;
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
+  font-size: 1.6rem;
+  border-bottom: 1px #ffffff41 solid;
+  padding-bottom: 0.4rem;
+  width: 100%;
+}
+.description p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #b1b1b1;
+  margin-bottom: 2rem;
+}
+.actors {
+  width: 60%;
+}
+.card-actor {
+  position: relative;
+}
+.card-actor h4 {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+.img-actor {
+  position: relative;
+}
+.img-actor img {
+  object-fit: cover;
+  width: 100%;
+  height: 15rem;
+}
+.trailer-vid {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 80vh;
+}
+.trailer-vid iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.back-home {
+  gap: 10px;
+  align-items: center;
+}
+.back-home h6 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* END OF DETAIL */
+.search {
+  align-items: center;
+  justify-content: space-around;
+  gap: 16rem;
+  margin-bottom: 1rem;
+}
+.search-bar {
+  display: flex;
+  height: 3rem;
+  line-height: 3rem;
+  background-color: #1d1d1d;
+  width: 30%;
+  align-items: center;
+  padding-left: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.movie-list input {
+  padding-top: 0.8rem;
+  position: relative;
+  outline: none;
+  line-height: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  border: none;
+  top: 20%;
+  width: 100%;
+  height: 2rem;
+  padding-left: 5px;
+  padding-right: 20px;
+}
+.search-bar:hover {
+  border-bottom: 2px solid red;
+}
+
+.movie-list h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+/* HERO SECTION */
+.hero {
+  background-image: url("./img/banner.jpg");
+  background-size: cover;
+  object-fit: cover;
+  height: 80vh;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 50px 0 50px;
+  margin-bottom: 5rem;
+}
+.hero-content {
+  width: 50%;
+}
+.hero-content h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.hero-content p {
+  margin: 20px 0 20px 0;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #fff;
+}
+.hero-content button {
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+.hero-content button:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+/* SERVICE  */
+.service {
+  margin-top: 5rem;
+}
+.service h2 {
+  font-weight: 500;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #b1b1b1b4;
+  padding-bottom: 20px;
+}
+.service ul li {
+  margin-bottom: 1rem;
+}
+/* END OF SERVICE */
+
+/* FOOTER */
+.footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #212121;
+}
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .left-footer {
+  /* width: 50%; */
+  width: 40%;
+}
+.footer .left-footer p {
+  font-weight: 400;
+}
+/* END OF FOOTER */
+
+/* ABOUT */
+.about {
+  margin-top: 5rem;
+}
+.about h2 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #b1b1b1b4;
+  padding-bottom: 20px;
+}
+/* END OF ABOUT */
+
+@media screen and (max-width: 1120px) {
+  .actors {
+    width: 70%;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (max-width: 975px) {
+  .actors {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search-bar {
+    width: 40%;
+  }
+  .hero-content {
+    text-align: center;
+    width: 100%;
+  }
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+  .actors {
+    width: 100%;
+  }
+
+  .card-actor h4 {
+    font-size: 0.8rem;
+  }
+  .card-body {
+    width: 150px;
+    height: 300px;
+  }
+  .card-img img {
+    width: 150px;
+    height: 300px;
+  }
+  .wrapper {
+    gap: 5px;
+  }
+  .search {
+    gap: 5rem;
+  }
+}
+
+@media screen and (max-width: 491px) {
+  .img-actor img {
+    height: 10rem;
+  }
+  .search {
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .card-body {
+    width: 120px;
+    height: 260px;
+  }
+  .card-img img {
+    width: 120px;
+    height: 260px;
+  }
+  .footer .container {
+    flex-direction: column;
+  }
+  .footer .left-footer {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .search-bar {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 401px) {
+  .card-body {
+    width: 150px;
+    height: 200px;
+  }
+  .card-img img {
+    width: 150px;
+    height: 200px;
+  }
+  .movie-list h3 {
+    font-size: 1.4rem;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .title-movie-detail h2 {
+    font-size: 1.5rem;
+  }
+  .title-movie-detail p {
+    font-size: 1rem;
+  }
+  .title-movie-detail h5 {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 336px) {
+  .card-body {
+    width: 120px;
+    height: 200px;
+  }
+  .card-img img {
+    width: 120px;
+    height: 200px;
+  }
+  .card-title h2 {
+    font-size: 0.9rem;
+  }
+  .card-title h4 {
+    font-size: 0.7rem;
   }
 }
